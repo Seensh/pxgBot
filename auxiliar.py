@@ -1,12 +1,13 @@
 import pyautogui
 import time
+from datetime import datetime
 
-positionHabilidades = None
-positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
-if(positionHabilidades != None):
-    positionCenterHabilidades = pyautogui.center(positionHabilidades)
-    pyautogui.click((positionCenterHabilidades.x + 40),positionCenterHabilidades.y)
-    pyautogui.moveTo((positionCenterHabilidades.x),(positionCenterHabilidades.y+20))
-    time.sleep(0.3)
-
+now = datetime.now()
+ 
+pizza = pyautogui.locateOnScreen('pizza.png', grayscale=True,confidence=0.8)
+pizzaCenter = pyautogui.center(pizza)
+pyautogui.click(pizzaCenter.x,pizzaCenter.y,button='right')
+poke = pyautogui.locateOnScreen('poke.png', grayscale=True,confidence=0.8)
+pokeCenter = pyautogui.center(poke)
+pyautogui.click(pokeCenter.x,pokeCenter.y)
 pyautogui.displayMousePosition()
