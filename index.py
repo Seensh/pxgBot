@@ -75,21 +75,21 @@ def functionMain():
                 
             
         print("Não há mais pokemons")
-        positionDeadDMagikarp = pyautogui.locateOnScreen('pokemon.png', grayscale=True, confidence=0.7)
+        positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/magikarp.png', grayscale=True, confidence=0.7)
         time.sleep(0.5)
-        while(positionDeadDMagikarp != None):
-            if (positionDeadDMagikarp != None):
-                positionSuperball = pyautogui.locateOnScreen('images/ball/ultra.png',confidence=0.7)
+        while(positionDeadPokemon != None):
+            if (positionDeadPokemon != None):
+                positionBall = pyautogui.locateOnScreen('images/ball/ultra.png',confidence=0.7)
                 time.sleep(1)
-                if(positionSuperball != None):
-                    positionCenterSuperball = pyautogui.center(positionSuperball)
-                    positionCenterDeadMagikarp = pyautogui.center(positionDeadDMagikarp)
+                if(positionBall != None):
+                    positionCenterball = pyautogui.center(positionBall)
+                    positionCenterDeadPokemon = pyautogui.center(positionDeadPokemon)
                     time.sleep(0.5)
-                    pyautogui.click(positionCenterSuperball.x,positionCenterSuperball.y-5,button='right')
+                    pyautogui.click(positionCenterball.x,positionCenterball.y-5,button='right')
                     time.sleep(1)
-                    pyautogui.click(positionCenterDeadMagikarp.x,positionCenterDeadMagikarp.y)
+                    pyautogui.click(positionCenterDeadPokemon.x,positionCenterDeadPokemon.y)
                     time.sleep(3)
-            positionDeadDMagikarp = pyautogui.locateOnScreen('pokemon.png', grayscale=True, confidence=0.7)
+            positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/magikarp.png', grayscale=True, confidence=0.7)
         print('Estou capturando')
 
 def functionPositionVara(positionVara):
