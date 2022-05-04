@@ -85,7 +85,7 @@ def functionMain():
                     positionCenterSuperball = pyautogui.center(positionSuperball)
                     positionCenterDeadMagikarp = pyautogui.center(positionDeadDMagikarp)
                     time.sleep(0.5)
-                    pyautogui.click(positionCenterSuperball.x,positionCenterSuperball.y,button='right')
+                    pyautogui.click(positionCenterSuperball.x,positionCenterSuperball.y-5,button='right')
                     time.sleep(1)
                     pyautogui.click(positionCenterDeadMagikarp.x,positionCenterDeadMagikarp.y)
                     time.sleep(3)
