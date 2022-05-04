@@ -60,7 +60,22 @@ def functionMonstro(positionNameDiglett, positionNameDugtrio):
             positionCenterHabilidades = pyautogui.center(positionHabilidades)
             pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
             pyautogui.moveTo((positionCenterHabilidades.x + 20),positionCenterHabilidades.y)
-        time.sleep(1)    
+        time.sleep(1)
+        #captura dugtrio
+        positionDeadDugtrio = pyautogui.locateOnScreen('../images/deadPokemon/dugtrio.png', grayscale=True, confidence=0.7)
+        time.sleep(0.5)
+        if (positionDeadDugtrio != None):
+            positionSuperball = pyautogui.locateOnScreen('../images/ball/Superball.png',confidence=0.7)
+            time.sleep(1)
+            if(positionSuperball != None):
+                positionCenterSuperball = pyautogui.center(positionSuperball)
+                positionCenterDeadDugtrio = pyautogui.center(positionDeadDugtrio)
+                time.sleep(0.5)
+                pyautogui.click(positionCenterSuperball.x,positionCenterSuperball.y,button='right')
+                time.sleep(1)
+                pyautogui.click(positionCenterDeadDugtrio.x,positionCenterDeadDugtrio.y)
+                
+        
         print("verificando monstro")
     return
 
