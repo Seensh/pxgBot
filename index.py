@@ -75,21 +75,33 @@ def functionMain():
                 
             
         print("Não há mais pokemons")
-        positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/magikarp.png', grayscale=True, confidence=0.7)
+        positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp.png', grayscale=True, confidence=0.7)
+        positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp2.png', grayscale=True, confidence=0.7)
         time.sleep(0.5)
-        while(positionDeadPokemon != None):
-            if (positionDeadPokemon != None):
+        while(positionDeadPokemon != None or positionDeadPokemon2 != None):
+            if (positionDeadPokemon != None or positionDeadPokemon2 != None):
                 positionBall = pyautogui.locateOnScreen('images/ball/ultra.png',confidence=0.7)
                 time.sleep(1)
                 if(positionBall != None):
-                    positionCenterball = pyautogui.center(positionBall)
-                    positionCenterDeadPokemon = pyautogui.center(positionDeadPokemon)
-                    time.sleep(0.5)
-                    pyautogui.click(positionCenterball.x,positionCenterball.y-5,button='right')
-                    time.sleep(1)
-                    pyautogui.click(positionCenterDeadPokemon.x,positionCenterDeadPokemon.y)
-                    time.sleep(3)
-            positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/magikarp.png', grayscale=True, confidence=0.7)
+                    if(positionCenterDeadPokemon != None):
+                        positionCenterball = pyautogui.center(positionBall)
+                        positionCenterDeadPokemon = pyautogui.center(positionDeadPokemon)
+                        time.sleep(0.5)
+                        pyautogui.click(positionCenterball.x,positionCenterball.y-5,button='right')
+                        time.sleep(1)
+                        pyautogui.click(positionCenterDeadPokemon.x,positionCenterDeadPokemon.y)
+                        time.sleep(3)
+                    else:
+                        if(positionDeadPokemon2 != None):
+                            positionCenterball = pyautogui.center(positionBall)
+                            positionCenterDeadPokemon2 = pyautogui.center(positionDeadPokemon2)
+                            time.sleep(0.5)
+                            pyautogui.click(positionCenterball.x,positionCenterball.y-5,button='right')
+                            time.sleep(1)
+                            pyautogui.click(positionCenterDeadPokemon2.x,positionCenterDeadPokemon2.y)
+                            time.sleep(3)
+            positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp.png', grayscale=True, confidence=0.7)
+            positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp2.png', grayscale=True, confidence=0.7)
         print('Estou capturando')
 
 def functionPositionVara(positionVara):
