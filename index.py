@@ -1,6 +1,7 @@
 import pyautogui
 import keyboard
 import time
+import datetime
 
 
 def functionMain():   
@@ -57,7 +58,9 @@ def functionMain():
             scBatalha = pyautogui.screenshot(region=(positionX,positionY,largura,altura))
             scBatalha.save('images/batalha/batalhaCheia.png')
             print('Tirei foto')
-        #CAPTURA POSIÇÃO Hanilidades
+
+        salvaLog()
+        #CAPTURA POSIÇÃO Habilidades
         positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
         while(positionBatalha != None):
             if(positionHabilidades != None):
@@ -140,5 +143,14 @@ def functionAlimentarPoke():
         pokeCenter = pyautogui.center(poke)
         pyautogui.click(pokeCenter.x,pokeCenter.y)
         print("entrei e me alimentei")
+
+def salvaLog():
+    dateTimeNow = datetime.datetime.now()
+    StringDateTimeNow = str(dateTimeNow)
+    StringDateTimeNowReplaces = StringDateTimeNow.replace(":", "-")
+    scBatalhaLog = pyautogui.screenshot()
+    nomeImagem = 'images/logBatalha/' + StringDateTimeNowReplaces + '.png'
+    scBatalhaLog.save(nomeImagem)
+    print("salvei log de batalha")
 
 functionMain()

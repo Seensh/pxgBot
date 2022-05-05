@@ -77,6 +77,8 @@ def functionMonstro(positionNameDiglett, positionNameDugtrio):
                 
         
         print("verificando monstro")
+    print("coletando espólios de batalha")
+    keyboard.press('e')
     return
 
 def functionAndar(x,y):
