@@ -102,7 +102,11 @@ def functionMain():
                             time.sleep(3)
             positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp.png', grayscale=True, confidence=0.7)
             positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp2.png', grayscale=True, confidence=0.7)
-        print('Estou capturando')
+            print('Estou capturando')
+
+        time.sleep(1)
+        functionAlimentarPoke()
+        
 
 def functionPositionVara(positionVara):
     positionVara = pyautogui.locateOnScreen('vara.png')
@@ -124,5 +128,14 @@ def functionRepetirJogarVara():
     pyautogui.click(positionCenterAgua.x,positionCenterAgua.y)
     pyautogui.moveTo((positionCenterAgua.x),(positionCenterAgua.y+20))
     print('Agua')
+
+def functionAlimentarPoke():
+    pizza = pyautogui.locateOnScreen('caverna/pizza.png', grayscale=True,confidence=0.8)
+    pizzaCenter = pyautogui.center(pizza)
+    pyautogui.click(pizzaCenter.x,pizzaCenter.y,button='right')
+    poke = pyautogui.locateOnScreen('caverna/poke.png', grayscale=True,confidence=0.8)
+    pokeCenter = pyautogui.center(poke)
+    pyautogui.click(pokeCenter.x,pokeCenter.y)
+    print("entrei e me alimentei")
 
 functionMain()
