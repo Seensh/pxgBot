@@ -71,6 +71,8 @@ def functionMain():
                 time.sleep(1)     
                 print('Habilidades')           
             positionBatalha = pyautogui.locateOnScreen('images/batalha/batalhaCheia.png', grayscale=True, confidence=0.7)
+            print("coletando espólios de batalha")
+            keyboard.press('e')
             print("comparando se existe pokemons")
                 
             
@@ -131,11 +133,12 @@ def functionRepetirJogarVara():
 
 def functionAlimentarPoke():
     pizza = pyautogui.locateOnScreen('caverna/pizza.png', grayscale=True,confidence=0.8)
-    pizzaCenter = pyautogui.center(pizza)
-    pyautogui.click(pizzaCenter.x,pizzaCenter.y,button='right')
-    poke = pyautogui.locateOnScreen('caverna/poke.png', grayscale=True,confidence=0.8)
-    pokeCenter = pyautogui.center(poke)
-    pyautogui.click(pokeCenter.x,pokeCenter.y)
-    print("entrei e me alimentei")
+    if(pizza):    
+        pizzaCenter = pyautogui.center(pizza)
+        pyautogui.click(pizzaCenter.x,pizzaCenter.y,button='right')
+        poke = pyautogui.locateOnScreen('caverna/poke.png', grayscale=True,confidence=0.8)
+        pokeCenter = pyautogui.center(poke)
+        pyautogui.click(pokeCenter.x,pokeCenter.y)
+        print("entrei e me alimentei")
 
 functionMain()
