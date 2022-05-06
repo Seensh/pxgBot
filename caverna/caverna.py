@@ -55,11 +55,11 @@ def functionMonstro(positionNameDiglett, positionNameDugtrio):
         positionNameDiglett = pyautogui.locateOnScreen('dugtrio.png', grayscale=True,confidence=0.8)
         positionNameDugtrio = pyautogui.locateOnScreen('diglett.png', grayscale=True,confidence=0.8)
         time.sleep(4)
-        positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
-        if (positionHabilidades != None):
-            positionCenterHabilidades = pyautogui.center(positionHabilidades)
-            pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
-            pyautogui.moveTo((positionCenterHabilidades.x + 20),positionCenterHabilidades.y)
+        #positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
+        #if (positionHabilidades != None):
+        #    positionCenterHabilidades = pyautogui.center(positionHabilidades)
+        #    pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
+        #    pyautogui.moveTo((positionCenterHabilidades.x + 20),positionCenterHabilidades.y)
         time.sleep(1)
         #captura dugtrio
         #positionDeadDugtrio = pyautogui.locateOnScreen('../images/deadPokemon/dugtrio.png', grayscale=True, confidence=0.7)

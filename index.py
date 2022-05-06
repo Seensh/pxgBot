@@ -60,23 +60,23 @@ def functionMain():
             print('Tirei foto')
 
         salvaLog()
-        #CAPTURA POSIÇÃO Habilidades
-        positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
-        while(positionBatalha != None):
-            if(positionHabilidades != None):
-                positionCenterHabilidades = pyautogui.center(positionHabilidades)
-                time.sleep(1)
-                pyautogui.click((positionCenterHabilidades.x + 40),positionCenterHabilidades.y)
-                time.sleep(2)
-                pyautogui.click((positionCenterHabilidades.x + 80),positionCenterHabilidades.y)
-                time.sleep(2)
-                pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
-                time.sleep(1)     
-                print('Habilidades')           
-            positionBatalha = pyautogui.locateOnScreen('images/batalha/batalhaCheia.png', grayscale=True, confidence=0.7)
-            print("coletando espólios de batalha")
-            keyboard.press('e')
-            print("comparando se existe pokemons")
+        ##CAPTURA POSIÇÃO Habilidades
+        #positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
+        #while(positionBatalha != None):
+        #    if(positionHabilidades != None):
+        #        positionCenterHabilidades = pyautogui.center(positionHabilidades)
+        #        time.sleep(1)
+        #        pyautogui.click((positionCenterHabilidades.x + 40),positionCenterHabilidades.y)
+        #        time.sleep(2)
+        #        pyautogui.click((positionCenterHabilidades.x + 80),positionCenterHabilidades.y)
+        #        time.sleep(2)
+        #        pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
+        #        time.sleep(1)     
+        #        print('Habilidades')           
+        #    positionBatalha = pyautogui.locateOnScreen('images/batalha/batalhaCheia.png', grayscale=True, confidence=0.7)
+        print("coletando espólios de batalha")
+        keyboard.press('e')
+        #    print("comparando se existe pokemons")
                 
             
         print("Não há mais pokemons")
