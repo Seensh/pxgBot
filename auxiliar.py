@@ -1,13 +1,8 @@
-import string
+from pyautogui import *
 import pyautogui
 import time
-from PIL import Image
-import numpy as np
 import keyboard
-import datetime
-import cv2
-
+import random
+import win32api, win32con
 
 pyautogui.displayMousePosition()
-
-

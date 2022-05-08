@@ -61,34 +61,35 @@ def functionMain():
 
         salvaLog()
         ##CAPTURA POSIÇÃO Habilidades
-        #positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
-        #while(positionBatalha != None):
-        #    if(positionHabilidades != None):
-        #        positionCenterHabilidades = pyautogui.center(positionHabilidades)
-        #        time.sleep(1)
-        #        pyautogui.click((positionCenterHabilidades.x + 40),positionCenterHabilidades.y)
-        #        time.sleep(2)
-        #        pyautogui.click((positionCenterHabilidades.x + 80),positionCenterHabilidades.y)
-        #        time.sleep(2)
-        #        pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
-        #        time.sleep(1)     
-        #        print('Habilidades')           
-        #    positionBatalha = pyautogui.locateOnScreen('images/batalha/batalhaCheia.png', grayscale=True, confidence=0.7)
+        positionHabilidades = pyautogui.locateOnScreen('habilidades.png', grayscale=True)
+        while(positionBatalha != None):
+            if(positionHabilidades != None):
+                positionCenterHabilidades = pyautogui.center(positionHabilidades)
+                time.sleep(1)
+                #pyautogui.click((positionCenterHabilidades.x + 40),positionCenterHabilidades.y)
+                #time.sleep(2)
+                #pyautogui.click((positionCenterHabilidades.x + 80),positionCenterHabilidades.y)
+                #time.sleep(2)
+                pyautogui.click((positionCenterHabilidades.x + 120),positionCenterHabilidades.y)
+                time.sleep(1)     
+                print('Habilidades')           
+            positionBatalha = pyautogui.locateOnScreen('images/batalha/batalhaCheia.png', grayscale=True, confidence=0.7)
         print("coletando espólios de batalha")
         keyboard.press('e')
-        #    print("comparando se existe pokemons")
+        print("comparando se existe pokemons")
                 
             
         print("Não há mais pokemons")
-        positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp.png', grayscale=True, confidence=0.7)
-        positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp2.png', grayscale=True, confidence=0.7)
+        positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp2.png', grayscale=True, confidence=0.7)
+        positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp3.png', grayscale=True, confidence=0.7)
         time.sleep(0.5)
         while(positionDeadPokemon != None or positionDeadPokemon2 != None):
             if (positionDeadPokemon != None or positionDeadPokemon2 != None):
                 positionBall = pyautogui.locateOnScreen('images/ball/ultra.png',confidence=0.7)
                 time.sleep(1)
                 if(positionBall != None):
-                    if(positionCenterDeadPokemon != None):
+                    
+                    if(positionDeadPokemon != None):
                         positionCenterball = pyautogui.center(positionBall)
                         positionCenterDeadPokemon = pyautogui.center(positionDeadPokemon)
                         time.sleep(0.5)
@@ -106,7 +107,7 @@ def functionMain():
                             pyautogui.click(positionCenterDeadPokemon2.x,positionCenterDeadPokemon2.y)
                             time.sleep(3)
             positionDeadPokemon = pyautogui.locateOnScreen('images/deadPokemon/shinyGrantMagikarp.png', grayscale=True, confidence=0.7)
-            positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/shinyMagikarp2.png', grayscale=True, confidence=0.7)
+            positionDeadPokemon2 = pyautogui.locateOnScreen('images/deadPokemon/magikarp2.png', grayscale=True, confidence=0.7)
             print('Estou capturando')
 
         time.sleep(1)
@@ -140,9 +141,10 @@ def functionAlimentarPoke():
         pizzaCenter = pyautogui.center(pizza)
         pyautogui.click(pizzaCenter.x,pizzaCenter.y,button='right')
         poke = pyautogui.locateOnScreen('caverna/poke.png', grayscale=True,confidence=0.8)
-        pokeCenter = pyautogui.center(poke)
-        pyautogui.click(pokeCenter.x,pokeCenter.y)
-        print("entrei e me alimentei")
+        if(poke):
+            pokeCenter = pyautogui.center(poke)
+            pyautogui.click(pokeCenter.x,pokeCenter.y)
+            print("entrei e me alimentei")
 
 def salvaLog():
     dateTimeNow = datetime.datetime.now()
